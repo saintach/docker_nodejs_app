@@ -1,0 +1,32 @@
+# OS-specific
+.DS_Store
+
+# Editor swapfiles
+.*.sw?
+*~
+
+# Vagrant stuff
+acceptance_config.yml
+boxes/*
+/.vagrant
+/website/.vagrant
+/website/build
+/vagrant-spec.config.rb
+
+# NodeJS, Bower, NPM
+lib-cov
+*.seed
+*.log
+*.out
+*.pid
+npm-debug.log
+node_modules
+bower_components
+
+# Misc
+*~
+*#
+.netbeans
+nbproject
+.idea
+.node_history

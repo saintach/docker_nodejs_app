@@ -1,0 +1,18 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+VAGRANTFILE_API_VERSION = "2"
+
+Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
+  # Use Ubuntu 14.04 as default box
+  config.vm.box = "ubuntu/trusty64"
+  # Provision this box with `docker` provisioner
+  config.vm.provision "docker"
+  # The following line terminates all ssh connections. Therefore,
+  # Vagrant will be forced to reconnect.
+  # That's a workaround to have the docker command in the PATH
+  config.vm.provision "shell", inline:
+    "ps aux | grep 'sshd:' | awk '{print $2}' | xargs kill"
+  # Forward port 8080 to host machine
+  config.vm.network :forwarded_port, guest: 8080, host: 8080
+end
