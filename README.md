@@ -1,4 +1,5 @@
 # Dockerize simple NodeJS app with Vagrant configuration
+![SFW](http://forthebadge.com/images/badges/kinda-sfw.svg)
 
 ## Prerequisites
 * Mac OSX
